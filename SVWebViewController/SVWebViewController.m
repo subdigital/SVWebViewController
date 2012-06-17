@@ -37,11 +37,16 @@
 @implementation SVWebViewController
 
 @synthesize availableActions;
-
+@synthesize scalesPagesToFit;
 @synthesize URL, mainWebView;
 @synthesize backBarButtonItem, forwardBarButtonItem, refreshBarButtonItem, stopBarButtonItem, actionBarButtonItem, pageActionSheet;
 
 #pragma mark - setters and getters
+
+- (void)setScalesPagesToFit:(BOOL)scalesPages {
+    scalesPagesToFit = scalesPages;
+    self.mainWebView.scalesPageToFit = scalesPagesToFit;
+}
 
 - (UIBarButtonItem *)backBarButtonItem {
     
